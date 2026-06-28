@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const playHeroBtn = document.getElementById('play-video-btn');
     const mainVideo = document.getElementById('main-video-player');
     const videoContainer = document.getElementById('main-video-container');
+    const videoPlayOverlay = document.getElementById('video-play-overlay');
 
     if (playHeroBtn && mainVideo && videoContainer) {
         playHeroBtn.addEventListener('click', (e) => {
@@ -47,6 +48,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 3. Scroll smoothly to the video container in parallel
             videoContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    }
+
+    if (mainVideo && videoPlayOverlay) {
+        // Toggle play on overlay click
+        videoPlayOverlay.addEventListener('click', () => {
+            mainVideo.play();
+        });
+
+        // Hide overlay when video starts playing
+        mainVideo.addEventListener('play', () => {
+            videoPlayOverlay.classList.add('hidden');
+        });
+
+        // Show overlay when video is paused or ends
+        mainVideo.addEventListener('pause', () => {
+            videoPlayOverlay.classList.remove('hidden');
+        });
+
+        mainVideo.addEventListener('ended', () => {
+            videoPlayOverlay.classList.remove('hidden');
+            mainVideo.currentTime = 0; // reset to beginning
         });
     }
 
