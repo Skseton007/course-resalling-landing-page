@@ -351,6 +351,9 @@ header {
 }
 
 @media (max-width: 767px) {
+    .container {
+        padding: 0 1rem !important; /* Reclaim valuable space on mobile screens */
+    }
     .nav-container {
         flex-direction: column;
         gap: 0.85rem;
@@ -367,6 +370,7 @@ header {
         justify-content: center;
         width: 100%;
         padding: 0;
+        flex-wrap: wrap; /* Ensure links wrap cleanly rather than overflowing the screen sides */
     }
     .nav-link {
         font-size: 0.76rem;
@@ -2318,16 +2322,26 @@ footer {
 /* --- Mobile Responsive Optimizations --- */
 @media (max-width: 480px) {
     .logo {
-        font-size: 0.92rem !important;
-        gap: 0.4rem !important;
+        font-size: 0.88rem !important;
+        gap: 0.35rem !important;
+        white-space: normal !important; /* Protect header layout by allowing wraps defensively */
+        justify-content: center;
+        text-align: center;
     }
     .logo-img {
-        width: 32px !important;
-        height: 32px !important;
+        width: 28px !important;
+        height: 28px !important;
+    }
+    .nav-links {
+        gap: 0.5rem 0.8rem !important; /* Tighter navigation menu link layout */
     }
     .hero-title {
-        font-size: 2.1rem !important;
-        line-height: 1.2 !important;
+        font-size: 1.75rem !important; /* Tighter scale to guarantee perfect fit on all phone screen widths */
+        line-height: 1.25 !important;
+    }
+    .announcement-pill {
+        font-size: 0.72rem !important;
+        padding: 0.3rem 0.65rem !important;
     }
     .hero-subtitle {
         font-size: 0.95rem !important;
