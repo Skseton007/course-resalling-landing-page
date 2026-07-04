@@ -2456,3 +2456,14 @@ footer {
         box-shadow: 0 0 0 0 rgba(255, 255, 255, 0), 0 4px 20px rgba(0,0,0,0.4);
     }
 }
+
+/* --- Hero Purchase Button Hover Animations --- */
+#hero-purchase-btn:hover {
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 0 0 55px rgba(212,175,55,0.85), 0 12px 40px rgba(0,0,0,0.55) !important;
+    filter: brightness(1.1);
+}
+
+#hero-purchase-btn:active {
+    transform: translateY(-1px) scale(0.99) !important;
+}
