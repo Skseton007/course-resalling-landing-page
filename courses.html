@@ -6,9 +6,15 @@
     <title>Unlock Premium Courses — Affordable Course Market</title>
     <meta name="description" content="Get instant access to 4000+ premium courses in one membership. Only one payment. Lifetime access. Download directly to your device.">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- High-Performance Asynchronous Google Fonts Loader -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap">
+    </noscript>
     
     <!-- FontAwesome for Premium Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
@@ -16,18 +22,29 @@
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css?v=1.2">
     
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code (Deferred Loader) -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2920778501592794');
-    fbq('track', 'PageView');
+    function loadMetaPixel() {
+        if (window.fbPixelLoaded) return;
+        window.fbPixelLoaded = true;
+
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2920778501592794');
+        fbq('track', 'PageView');
+    }
+
+    // Load Pixel when user interacts with the page (scrolls, touches, or moves mouse)
+    const interactionEvents = ['touchstart', 'scroll', 'mousemove', 'click', 'keydown'];
+    interactionEvents.forEach(function(evt) {
+        window.addEventListener(evt, loadMetaPixel, { passive: true });
+    });
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=2920778501592794&ev=PageView&noscript=1"
