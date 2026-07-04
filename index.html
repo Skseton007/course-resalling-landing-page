@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- FontAwesome for Premium Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css?v=1.2">
@@ -292,7 +292,7 @@
                         I know the truth — these courses are extremely expensive officially. Even I couldn't afford to buy them one by one.
                     </blockquote>
                     <div class="story-author">
-                        <img src="assets/founder-photo.png" alt="Sk Ibrahim Hossain — Founder" style="width: 62px; height: 62px; border-radius: 50%; object-fit: cover; border: 2.5px solid var(--gold-primary); box-shadow: 0 0 14px rgba(212,175,55,0.45), 0 0 0 2px rgba(100,70,200,0.3); flex-shrink: 0;">
+                        <img src="assets/founder-photo.png" alt="Sk Ibrahim Hossain — Founder" loading="lazy" style="width: 62px; height: 62px; border-radius: 50%; object-fit: cover; border: 2.5px solid var(--gold-primary); box-shadow: 0 0 14px rgba(212,175,55,0.45), 0 0 0 2px rgba(100,70,200,0.3); flex-shrink: 0;">
                         <div class="author-details">
                             <h5>Sk Ibrahim Hossain</h5>
                             <p>Founder & Curator, Affordable Course Market</p>
@@ -1056,6 +1056,6 @@
     </div>
 
     <!-- Custom Interactivity Script -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
